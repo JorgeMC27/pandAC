@@ -4,6 +4,8 @@ import com.upemorrally2021.pandac.controller.ControllerMotivo;
 import com.upemorrally2021.pandac.controller.ControllerResponsable;
 import com.upemorrally2021.pandac.controller.ControllerSitioAyuda;
 import com.upemorrally2021.pandac.controller.ControllerSolicitud;
+import com.upemorrally2021.pandac.mailer.Mailer;
+import com.upemorrally2021.pandac.model.entity.SitioAyuda;
 import com.upemorrally2021.pandac.view.SolicitudModalDlg;
 import com.upemorrally2021.pandac.view.utils.Element;
 import com.vaadin.annotations.PreserveOnRefresh;
@@ -29,12 +31,26 @@ public class MainUI  extends UI{
     @Getter @Autowired private ControllerSitioAyuda controllerSitioAyuda;
     @Getter @Autowired private ControllerSolicitud controllerSolicitud;
     
+    @Getter @Autowired private Mailer mailer;
+    
     @Override
     protected void init(VaadinRequest request){
         this.setSizeFull();
         this.getUI().getPage().setTitle(Element.getSystemName());
         
-        this.setContent(new SolicitudModalDlg());
+        String sitioAyudaId = request.getParameter("sa");
+        if(sitioAyudaId == null){sitioAyudaId = "0";}
+        
+        SitioAyuda sitioAyuda = controllerSitioAyuda.getRepositorio().getById(new Long(sitioAyudaId));
+        if(sitioAyuda != null)
+            this.setContent(new SolicitudModalDlg(sitioAyuda));
+        
+        /*
+        ip temporal: 172.23.48.57
+        url 1: http://172.23.48.57:23627/?sa=1
+        url 2: http://172.23.48.57:23627/?sa=2
+        url 3: http://172.23.48.57:23627/?sa=3
+        */
     
     }
 }
