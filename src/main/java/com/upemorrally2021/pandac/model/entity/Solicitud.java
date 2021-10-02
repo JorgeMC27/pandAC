@@ -35,6 +35,8 @@ public class Solicitud implements Serializable{
     @ManyToOne
     @JoinColumn(name="sitioAyuda",referencedColumnName="id",insertable=false,updatable=false)
     private SitioAyuda objSitioAyuda;
+    
+    
     /* Metodos */
     @Override
     public String toString(){
