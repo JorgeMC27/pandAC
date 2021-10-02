@@ -31,15 +31,15 @@ public abstract class TemplateModalDlg extends Panel{
         ui = Element.getUI();
         ResponsiveLayout actions = new ResponsiveLayout();
         
-        delete = new Button("templateModalDlg.buttonDelete");
+        delete = new Button("Eliminar");
             Element.cfgComponent(delete);
             delete.setStyleName(ValoTheme.BUTTON_FRIENDLY);
             delete.setVisible(false);
-        accept = new Button("buttonAccept");
+        accept = new Button("Agregar");
             Element.cfgComponent(accept);
             accept.addClickListener((Button.ClickEvent event) -> {buttonAcceptEvent();});
             accept.setStyleName(ValoTheme.BUTTON_PRIMARY);
-        cancel = new Button(".buttonCancel");
+        cancel = new Button("Cancelar");
             Element.cfgComponent(cancel);
             cancel.addClickListener((Button.ClickEvent event) -> {buttonCancelEvent();});
             cancel.setStyleName(ValoTheme.BUTTON_DANGER);

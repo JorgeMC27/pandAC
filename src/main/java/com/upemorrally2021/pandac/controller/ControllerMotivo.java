@@ -9,11 +9,14 @@ import com.tiamex.comeiiEA.utils.Utils;
 import com.upemorrally2021.pandac.model.entity.Motivo;
 import com.upemorrally2021.pandac.model.repository.RepositoryMotivo;
 import java.util.logging.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author cerimice
  */
+
+@Component
 public class ControllerMotivo extends Controller<Motivo,RepositoryMotivo>{
 
     @Override

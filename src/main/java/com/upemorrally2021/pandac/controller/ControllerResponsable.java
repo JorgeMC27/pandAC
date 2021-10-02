@@ -6,14 +6,16 @@ package com.upemorrally2021.pandac.controller;
 
 import com.tiamex.comeiiEA.utils.Utils;
 import com.upemorrally2021.pandac.model.entity.Responsable;
-import com.upemorrally2021.pandac.model.entity.Solicitud;
 import com.upemorrally2021.pandac.model.repository.RepositoryResponsable;
 import java.util.logging.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author User-Lap
  */
+
+@Component
 public class ControllerResponsable extends Controller<Responsable, RepositoryResponsable>{
 
     @Override

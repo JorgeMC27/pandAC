@@ -9,11 +9,14 @@ import com.tiamex.comeiiEA.utils.Utils;
 import com.upemorrally2021.pandac.model.entity.Solicitud;
 import com.upemorrally2021.pandac.model.repository.RepositorySolicitud;
 import java.util.logging.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author User-Lap
  */
+
+@Component
 public class ControllerSolicitud extends Controller<Solicitud, RepositorySolicitud>{
 
     @Override

@@ -4,6 +4,7 @@ import com.tiamex.comeiiEA.utils.Utils;
 import com.upemorrally2021.pandac.model.entity.SitioAyuda;
 import com.upemorrally2021.pandac.model.repository.RepositorySitioAyuda;
 import java.util.logging.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
@@ -11,6 +12,8 @@ import java.util.logging.Logger;
  *  Rodrigo C. B.
  *  cbro172663 
  */
+
+@Component
 public class ControllerSitioAyuda extends Controller<SitioAyuda, RepositorySitioAyuda>{
      //Atributos
 
