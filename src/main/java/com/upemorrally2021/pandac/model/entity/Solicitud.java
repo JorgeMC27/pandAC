@@ -25,12 +25,16 @@ public class Solicitud implements Serializable{
     @Column(nullable=false) private String email;
     @Column(nullable=false) private String telefono;
     @Column(nullable=false) private long motivo;
+    @Column(nullable=false) private long sitioAyuda;
     
     /* Relaciones */
     @ManyToOne
     @JoinColumn(name="motivo",referencedColumnName="id",insertable=false,updatable=false)
     private Motivo objMotivo;
     
+    @ManyToOne
+    @JoinColumn(name="sitioAyuda",referencedColumnName="id",insertable=false,updatable=false)
+    private SitioAyuda objSitioAyuda;
     /* Metodos */
     @Override
     public String toString(){
